@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Weekly Tasks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            margin: 40px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            display: inline-flex;
+            gap: 20px;
+        }
+        li {
+            font-size: 1.2em;
+        }
+        a {
+            text-decoration: none;
+            color: #007BFF;
+            padding: 8px 15px;
+            border: 1px solid #007BFF;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        a:hover {
+            background-color: #007BFF;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weekly Tasks</h1>
+    <ul>
+        {% for day in days %}
+        <li><a href="{% url 'day_task' day %}">{{ day|capfirst }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
